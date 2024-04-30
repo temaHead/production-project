@@ -4,34 +4,34 @@
  */
 
 export default {
-  clearMocks: true,
-  testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    "\\\\node_modules\\\\"
-  ],
-  // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    "node_modules"
-  ],
+    clearMocks: true,
+    testEnvironment: 'jsdom',
+    coveragePathIgnorePatterns: [
+        '\\\\node_modules\\\\',
+    ],
+    // An array of directory names to be searched recursively up from the requiring module's location
+    moduleDirectories: [
+        'node_modules',
+    ],
 
-  // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node"
-  ],
-  rootDir: '../../',
-  testMatch: [
+    // An array of file extensions your modules use
+    moduleFileExtensions: [
+        'js',
+        'jsx',
+        'ts',
+        'tsx',
+        'json',
+        'node',
+    ],
+    rootDir: '../../',
+    testMatch: [
     // "**/__tests__/**/*.[jt]s?(x)",
     // "**/?(*.)+(spec|test).[tj]s?(x)"
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-  ],
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-  
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    ],
+    // All imported modules in your tests should be mocked automatically
+    // automock: false,
+
     // Stop running tests after `n` failures
     // bail: 0,
 
@@ -85,7 +85,6 @@ export default {
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
-
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -151,7 +150,6 @@ export default {
     // testLocationInResults: false,
 
     // The glob patterns Jest uses to detect test files
-
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
     // testPathIgnorePatterns: [

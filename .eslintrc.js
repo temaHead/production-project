@@ -35,7 +35,8 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['warn', { markupOnly: true }],
+        'max-len': ['error', { ignoreComments: true, code: 120, tabWidth: 4 }],
 
     },
     globals: {
