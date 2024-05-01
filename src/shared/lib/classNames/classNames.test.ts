@@ -1,4 +1,4 @@
-import { classNames } from './className';
+import { classNames } from './classNames';
 
 describe('classNames', () => {
     test('С единственным первм параметром', () => {

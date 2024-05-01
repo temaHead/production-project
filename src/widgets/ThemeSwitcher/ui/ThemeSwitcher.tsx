@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/className';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, useTheme } from 'app/providers';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
-import { Button, ThemeButton } from 'widgets/Button';
+import { Button, ThemeButton } from 'shared/ui/Button';
 
 interface ThemeSwitcherProps {
   className?: string;
 }
 
-function ThemeSwitcher({ className }: ThemeSwitcherProps) {
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     const { theme, togleTheme } = useTheme();
 
     return (
@@ -20,6 +20,5 @@ function ThemeSwitcher({ className }: ThemeSwitcherProps) {
             {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
         </Button>
     );
-}
+};
 
-export default ThemeSwitcher;
