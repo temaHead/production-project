@@ -9,7 +9,7 @@ import { BuildOptions } from './types/config';
 // import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
-    return [
+    const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
@@ -22,10 +22,13 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
             __IS_DEV__: JSON.stringify(isDev),
         }),
 
-        // isDev && new ReactRefreshWebpackPlugin(),
-        new HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
+    // isDev && new ReactRefreshWebpackPlugin(),
     ];
+
+    if (isDev) {
+        plugins.push(new HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+    }
+
+    return plugins;
 }

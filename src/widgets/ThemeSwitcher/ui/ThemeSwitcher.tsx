@@ -21,4 +21,3 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
         </Button>
     );
 };
-

@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useState } from 'react';
 import { Button } from 'shared/ui/Button';
-import cls from './Sidebar.module.scss';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
     className?: string;
@@ -35,4 +35,4 @@ const Sidebar = ({ className }: SidebarProps) => {
     );
 };
 
-export default Sidebar
+export default Sidebar;
