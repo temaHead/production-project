@@ -11,7 +11,7 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix && npx stylelint \"**/*.scss\" --fix",
+    "fix": "eslint \"**/*.{ts,tsx}\" --fix && npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
@@ -34,7 +34,7 @@
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
-    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/builder-webpack5": "^8.0.9",
     "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
@@ -66,7 +66,7 @@
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
-    "loki": "^0.28.1",
+    "loki": "^0.35.0",
     "mini-css-extract-plugin": "^2.5.3",
     "reg-cli": "^0.18.5",
     "regenerator-runtime": "^0.13.9",
@@ -84,12 +84,14 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1"
   },
   "loki": {

@@ -3,7 +3,7 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers';
+import { useTheme } from './providers/ThemeProvider';
 
 function App() {
     const { theme } = useTheme();
