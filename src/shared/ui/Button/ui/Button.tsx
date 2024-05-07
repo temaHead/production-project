@@ -22,16 +22,18 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ThemeButton;
   square?: boolean;
-  size?: ButtonSize
+  size?: ButtonSize;
+  disabled?: boolean;
 }
 
 function Button(props: ButtonProps) {
     const {
-        className, children, theme, square, size = ButtonSize.M, ...outherProps
+        className, children, theme, square, size = ButtonSize.M, disabled, ...outherProps
     } = props;
 
     const mods:Record<string, boolean> = {
         [cls.square]: square,
+        [cls.disabled]: disabled,
     };
     return (
         <button
