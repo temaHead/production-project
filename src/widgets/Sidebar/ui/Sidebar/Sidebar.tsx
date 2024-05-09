@@ -1,14 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+import ThemeSwitcher from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
+import LangSwitcher from 'widgets/LangSwitcher/ui/LangSwitcher';
 import { ButtonSize } from 'shared/ui/Button/ui/Button';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLInk/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/home-icon.svg';
-import AboutIcon from 'shared/assets/icons/about-icon.svg';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 import cls from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
@@ -37,15 +35,9 @@ const Sidebar = ({ className }: SidebarProps) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <div className={cls.items}>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main} className={cls.item}>
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.link}>main</span>
-                </AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about} className={cls.item}>
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.link}>about</span>
-
-                </AppLink>
+                {SidebarItemsList.map((item) => (
+                    <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+                ))}
             </div>
 
             <div className={cls.switchers}>
@@ -56,4 +48,4 @@ const Sidebar = ({ className }: SidebarProps) => {
     );
 };
 
-export default Sidebar;
+export default memo(Sidebar);
