@@ -1,24 +1,28 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import cls from './Input.module.scss';
 
-type HTMLInputProps=Omit<InputHTMLAttributes<HTMLInputElement>, 'value'|'onChange'>
+type HTMLInputProps=Omit<InputHTMLAttributes<HTMLInputElement>, 'value'|'onChange'| 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?:string;
+  value?:string|number;
   onChange?:(value:string)=>void;
   autofocus?:boolean;
+  readonly?:boolean
 }
 
 export function Input({
-    className, value, onChange, type = 'text', placeholder, autofocus, ...otherProps
+    className, value, onChange, type = 'text', placeholder, autofocus, readonly, ...otherProps
 }: InputProps) {
     const [isFocused, setIsFocused] = useState(false);
     const [carriagePosition, setCarriagePosition] = useState(0);
+
     const ref = useRef<HTMLInputElement>(null);
+
+    const isCarriageVisible = isFocused && !readonly;
 
     const onChangeHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
@@ -42,6 +46,10 @@ export function Input({
         }
     }, [autofocus]);
 
+    const mods:Mods = {
+        [cls.readonly]: readonly
+    };
+
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])} onChange={onChangeHandler}>
             {placeholder && (
@@ -58,9 +66,10 @@ export function Input({
                     onFocus={onFocus}
                     onBlur={onBlur}
                     onSelect={onSelect}
+                    readOnly={readonly}
                     {...otherProps}
                 />
-                {isFocused && (
+                {isCarriageVisible && (
                     <span className={cls.carriage} style={{ left: `${carriagePosition * 9}px` }} />
                 )}
             </div>
