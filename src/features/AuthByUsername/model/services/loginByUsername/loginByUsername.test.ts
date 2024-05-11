@@ -1,5 +1,5 @@
 // import axios from 'axios';
-import { userActions } from 'entites/User';
+import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import axios from 'axios';
 import { loginByUsername } from './loginByUsername';

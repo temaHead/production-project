@@ -1,8 +1,8 @@
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { CounterSchema } from 'entites/Counter';
-import { ProfileSchema } from 'entites/Profile';
-import { UserSchema } from 'entites/User';
+import { CounterSchema } from 'entities/Counter';
+import { ProfileSchema } from 'entities/Profile';
+import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { To, NavigateOptions } from 'react-router-dom';
 

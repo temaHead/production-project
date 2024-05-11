@@ -64,6 +64,7 @@ module.exports = {
         __IS_DEV__: true,
         React: true,
         __API__: true,
+        __PROJECT__: true,
     },
     overrides: [
         {

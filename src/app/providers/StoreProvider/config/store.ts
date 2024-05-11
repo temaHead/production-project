@@ -1,6 +1,6 @@
 import { CombinedState, Reducer, ReducersMapObject, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { counterReducer } from 'entites/Counter';
-import { userReducer } from 'entites/User';
+import { counterReducer } from 'entities/Counter';
+import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
 import { To, NavigateOptions } from 'react-router-dom';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
