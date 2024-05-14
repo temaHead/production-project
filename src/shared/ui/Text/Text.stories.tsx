@@ -1,8 +1,8 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import Text, { TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import Text, { TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -16,41 +16,49 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    title: 'title',
-    text: 'text',
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
+
+export const Error = Template.bind({});
+Error.args = {
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
+    theme: TextTheme.ERROR,
+};
+
 export const onlyTitle = Template.bind({});
 onlyTitle.args = {
-    title: 'title',
+    title: 'Title lorem ipsun',
 };
+
 export const onlyText = Template.bind({});
 onlyText.args = {
-    text: 'text',
+    text: 'Description Description Description Description',
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-    title: 'title',
-    text: 'text',
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTitleDark = Template.bind({});
 onlyTitleDark.args = {
-    title: 'title',
+    title: 'Title lorem ipsun',
 };
 onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTextDark = Template.bind({});
 onlyTextDark.args = {
-    text: 'text',
+    text: 'Description Description Description Description',
 };
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const error = Template.bind({});
-onlyTextDark.args = {
-    text: 'text',
-    title: 'title',
-    theme: TextTheme.ERROR,
-
+export const SizeL = Template.bind({});
+SizeL.args = {
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
+    size: TextSize.L,
 };
