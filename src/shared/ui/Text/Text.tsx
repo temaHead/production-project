@@ -28,7 +28,7 @@ interface TextProps {
 }
 
 function Text({
-    className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.CENTER, size = TextSize.M
+    className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M
 }: TextProps) {
     return (
         <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
