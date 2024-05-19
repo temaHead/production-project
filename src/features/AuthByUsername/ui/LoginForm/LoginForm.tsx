@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
@@ -69,7 +69,7 @@ function LoginForm({ className, onSuccess }: LoginFormProps) {
                 />
                 <Button
                     className={cls.loginBtn}
-                    theme={ThemeButton.OUTLINE}
+                    theme={ButtonTheme.OUTLINE}
                     onClick={onLoginClick}
                     disabled={isLoading}
                 >

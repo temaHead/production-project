@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useState } from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import ThemeSwitcher from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher/ui/LangSwitcher';
 import { ButtonSize } from 'shared/ui/Button/ui/Button';
@@ -28,7 +28,7 @@ const Sidebar = ({ className }: SidebarProps) => {
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={cls.collapseBtn}
-                theme={ThemeButton.BACKGROUND_INVERTED}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
                 square
                 size={ButtonSize.L}
             >

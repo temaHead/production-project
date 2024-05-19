@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,7 +34,7 @@ function Navbar({ className }: NavbarProps) {
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <Button
                     type="button"
-                    theme={ThemeButton.CLEAR_INVERTED}
+                    theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
                     onClick={onLogout}
                 >
@@ -48,7 +48,7 @@ function Navbar({ className }: NavbarProps) {
         <div className={classNames(cls.Navbar, {}, [className])}>
             <Button
                 type="button"
-                theme={ThemeButton.CLEAR_INVERTED}
+                theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}
                 onClick={onShowModal}
             >
