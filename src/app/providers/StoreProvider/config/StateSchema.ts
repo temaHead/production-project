@@ -5,6 +5,7 @@ import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { UISchema } from 'features/UI';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
@@ -12,6 +13,7 @@ import { ArticlesPageSchema } from 'pages/ArticlesPage';
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: UISchema;
 
     // асинхронные редюсеры
     loginForm?: LoginSchema;
