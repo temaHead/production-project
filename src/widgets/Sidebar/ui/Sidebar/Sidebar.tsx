@@ -29,7 +29,7 @@ const Sidebar = ({ className }: SidebarProps) => {
     )), [collapsed, sidebarItemsList]);
 
     return (
-        <div
+        <menu
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
@@ -53,7 +53,7 @@ const Sidebar = ({ className }: SidebarProps) => {
                     className={cls.lang}
                 />
             </div>
-        </div>
+        </menu>
     );
 };
 
