@@ -4,8 +4,6 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -13,6 +11,8 @@ import { getLoginUsername } from 'entities/User/model/selector/getLoginUsername/
 import { getLoginError } from 'entities/User/model/selector/getLoginError/getLoginError';
 import { getLoginIsLoading } from 'entities/User/model/selector/getLoginIsLoading/getLoginIsloading';
 import { getLoginPassword } from 'entities/User/model/selector/getLoginPassword/getLoginPassword';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
