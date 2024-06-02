@@ -31,7 +31,7 @@ function CountrySelect({ className, value, onChange, readonly }: CountrySelectPr
             label={t('Укажите страну')}
             items={options}
             readonly={readonly}
-            direction="top"
+            direction="top right"
         />
     );
 }

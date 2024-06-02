@@ -33,7 +33,7 @@ function CurrencySelect({ className, value, onChange, readonly }: CurrencySelect
             items={options}
             onChange={onChangeHandler}
             readonly={readonly}
-            direction="top"
+            direction="top right"
         />
     );
 }
