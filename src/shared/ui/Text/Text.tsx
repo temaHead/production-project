@@ -40,9 +40,11 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 function Text({
     className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M
 }: TextProps) {
+    const HeaderTag = mapSizeToHeaderTag[size];
+
     return (
         <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
-            {title && <p className={cls.title}>{title}</p> }
+            {title && <HeaderTag className={cls.title}>{title}</HeaderTag> }
             {text && <p className={cls.text}>{text}</p> }
         </div>
     );
