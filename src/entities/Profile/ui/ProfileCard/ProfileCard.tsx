@@ -17,14 +17,14 @@ interface ProfileCardProps {
   isLoading?:boolean;
   error?:string;
   readonly?:boolean;
-  onChangeLasttname?:(value?:string)=>void;
+  onChangeLastname?:(value?:string)=>void;
   onChangeFirstname?:(value?:string)=>void;
   onChangeCity?:(value?:string)=>void;
   onChangeAge?:(value?:string)=>void;
   onChangeUsername?:(value?:string)=>void;
   onChangeAvatar?:(value?:string)=>void;
-  onChangeCurrency?:(currency?:Currency)=>void;
-  onChangeCountry?:(country?:Country)=>void;
+  onChangeCurrency?:(currency:Currency)=>void;
+  onChangeCountry?:(country:Country)=>void;
 }
 
 export function ProfileCard(props: ProfileCardProps) {
@@ -34,7 +34,7 @@ export function ProfileCard(props: ProfileCardProps) {
         isLoading,
         error,
         readonly,
-        onChangeLasttname,
+        onChangeLastname,
         onChangeFirstname,
         onChangeAge,
         onChangeCity,
@@ -90,7 +90,7 @@ export function ProfileCard(props: ProfileCardProps) {
                 value={data?.lastname}
                 placeholder={t('Ваша фамилия')}
                 className={cls.input}
-                onChange={onChangeLasttname}
+                onChange={onChangeLastname}
                 readonly={readonly}
             />
             <Input
