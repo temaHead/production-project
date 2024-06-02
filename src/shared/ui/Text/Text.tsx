@@ -15,6 +15,7 @@ export enum TextAlign{
 }
 
 export enum TextSize {
+    S = 'size_s',
     M = 'size_m',
     L = 'size_l',
 }
@@ -27,6 +28,14 @@ interface TextProps {
   align?:TextAlign;
   size?: TextSize;
 }
+
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+    [TextSize.S]: 'h3',
+    [TextSize.M]: 'h2',
+    [TextSize.L]: 'h1',
+};
 
 function Text({
     className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M
