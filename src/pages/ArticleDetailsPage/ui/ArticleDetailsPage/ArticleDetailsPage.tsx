@@ -6,7 +6,7 @@ import { ReducersList, DynamicModuleLoader } from 'shared/lib/components/Dynamic
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/Page/Page';
 import { VStack } from 'shared/ui/Stack';
-import { ArticleRecommendationsList } from 'features/AuthByUsername/articleRecommendationsList';
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -22,14 +22,6 @@ const reducers: ReducersList = {
 function ArticleDetailsPage({ className }: ArticleDetailsPageProps) {
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
-
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {t('Статья не найдена')}
-            </Page>
-        );
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

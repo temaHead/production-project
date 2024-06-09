@@ -16,6 +16,8 @@ function StoreProvider({ children, initialState, asyncReducers }: StoreProviderP
         asyncReducers as ReducersMapObject<StateSchema>,
     );
 
+    console.log('RENDER');
+
     return (
         <Provider store={store}>
             {children}
