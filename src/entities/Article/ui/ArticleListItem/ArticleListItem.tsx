@@ -10,10 +10,11 @@ import Text from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Card } from 'shared/ui/Card/Card';
 import AppLink from 'shared/ui/AppLInk/AppLink';
+import { ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from '../../model/types/article';
+    Article, ArticleBlockType, ArticleView,
+} from '../../index';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleListItemProps {
