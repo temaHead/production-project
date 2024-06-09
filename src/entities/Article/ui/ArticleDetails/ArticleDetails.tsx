@@ -11,7 +11,7 @@ import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import Text, { TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { ArticleBlockType } from '../../index';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';

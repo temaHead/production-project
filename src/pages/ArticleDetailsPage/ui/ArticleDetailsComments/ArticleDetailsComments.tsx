@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from 'shared/ui/Stack';
 import Loader from 'widgets/Loader/Loader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -25,7 +26,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const { t } = useTranslation();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
