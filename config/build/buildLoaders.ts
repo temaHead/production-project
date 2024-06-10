@@ -11,6 +11,9 @@ export function buildLoader(options: BuildOptions): RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
+
     const cssLoader = buildCssLoader(isDev);
 
     const fileLoader = {
@@ -22,13 +25,11 @@ export function buildLoader(options: BuildOptions): RuleSetRule[] {
         ],
     };
 
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // };
 
-    const babelLoader = buildBabelLoader(options);
-
-    return [babelLoader, typescriptLoader, cssLoader, fileLoader, svgLoader];
+    return [codeBabelLoader, tsxCodeBabelLoader, cssLoader, fileLoader, svgLoader];
 }
