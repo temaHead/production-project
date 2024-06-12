@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleDetails } from 'entities/Article';
-import { ReducersList, DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useParams } from 'react-router-dom';
-import { Page } from 'widgets/Page/Page';
-import { VStack } from 'shared/ui/Stack';
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleDetails } from '@/entities/Article';
+import { ReducersList, DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgets/Page/Page';
+import { VStack } from '@/shared/ui/Stack';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

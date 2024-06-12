@@ -1,6 +1,6 @@
-import { Button } from 'shared/ui/Button';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@/shared/ui/Button';
 
 function BugButton() {
     const [error, setError] = useState(false);
