@@ -61,7 +61,21 @@ module.exports = {
         'comma-dangle': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'artem/path-checker': ['error', {alias: "@"}],
+        'artem/path-checker': ['error', { alias: '@' }],
+        'artem/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
+        'artem/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

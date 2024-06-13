@@ -7,13 +7,13 @@ import { Input } from '@/shared/ui/Input/Input';
 import Text, { TextTheme } from '@/shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getLoginUsername } from '@/entities/User/model/selector/getLoginUsername/getLoginUsername';
-import { getLoginError } from '@/entities/User/model/selector/getLoginError/getLoginError';
-import { getLoginIsLoading } from '@/entities/User/model/selector/getLoginIsLoading/getLoginIsloading';
-import { getLoginPassword } from '@/entities/User/model/selector/getLoginPassword/getLoginPassword';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsloading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 
 export interface LoginFormProps {
   className?: string;
