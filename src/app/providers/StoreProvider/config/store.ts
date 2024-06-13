@@ -3,7 +3,6 @@ import {
     Reducer,
     ReducersMapObject,
     configureStore,
-    getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
