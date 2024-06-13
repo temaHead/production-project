@@ -5,7 +5,7 @@ interface LoaderProps {
   className?: string;
 }
 
-function Loader({ className }: LoaderProps) {
+export function Loader({ className }: LoaderProps) {
     return (
         <div className={classNames('lds-ellipsis', {}, [className])}>
             <div />
@@ -15,5 +15,3 @@ function Loader({ className }: LoaderProps) {
         </div>
     );
 }
-
-export default Loader;

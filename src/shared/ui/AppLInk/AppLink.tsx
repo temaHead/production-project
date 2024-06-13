@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
   children: React.ReactNode;
 }
 
-function AppLink(props: AppLinkProps) {
+export function AppLink(props: AppLinkProps) {
     const {
         className, children, theme = AppLinkTheme.PRIMARY, ...otherProps
     } = props;
@@ -26,5 +26,3 @@ function AppLink(props: AppLinkProps) {
         </Link>
     );
 }
-
-export default AppLink;
