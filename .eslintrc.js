@@ -61,7 +61,7 @@ module.exports = {
         'comma-dangle': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'artem/path-checker': 'error',
+        'artem/path-checker': ['error', {alias: "@"}],
     },
     globals: {
         __IS_DEV__: true,
