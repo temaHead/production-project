@@ -4,9 +4,9 @@ import { Profile } from '@/entities/Profile';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { $api } from '@/shared/api/api';
-import { ComponentRender } from '@/shared/config/tests/componentRender/componentRender';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
+import { ComponentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 const profile: Profile = {
     id: '1',
