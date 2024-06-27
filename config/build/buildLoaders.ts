@@ -1,9 +1,9 @@
-import { RuleSetRule } from 'webpack';
-import { BuildOptions } from './types/config';
+import webpack from 'webpack';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { BuildOptions } from './types/config';
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoader(options: BuildOptions): RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
 
     const svgLoader = {
@@ -16,6 +16,13 @@ export function buildLoader(options: BuildOptions): RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev);
 
+    // Если не используем тайпскрипт - нужен babel-loader
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // };
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
@@ -25,11 +32,12 @@ export function buildLoader(options: BuildOptions): RuleSetRule[] {
         ],
     };
 
-    // const typescriptLoader = {
-    //     test: /\.tsx?$/,
-    //     use: 'ts-loader',
-    //     exclude: /node_modules/,
-    // };
-
-    return [codeBabelLoader, tsxCodeBabelLoader, cssLoader, fileLoader, svgLoader];
+    return [
+        fileLoader,
+        svgLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader,
+        cssLoader,
+    ];
 }
