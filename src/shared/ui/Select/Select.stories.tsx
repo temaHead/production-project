@@ -22,6 +22,5 @@ Primary.args = {
         { value: '1', content: '111' },
         { value: '2', content: '222' },
         { value: '3', content: '333' },
-
-    ]
+    ],
 };

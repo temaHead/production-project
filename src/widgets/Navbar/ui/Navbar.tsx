@@ -15,7 +15,7 @@ import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
-  className?: string;
+    className?: string;
 }
 
 function Navbar({ className }: NavbarProps) {
@@ -63,7 +63,9 @@ function Navbar({ className }: NavbarProps) {
             >
                 {t('Войти')}
             </Button>
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     );
 }

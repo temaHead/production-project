@@ -26,7 +26,7 @@ export const useHover = () => {
                 onMouseLeave,
             },
         ],
-        [isHover, onMouseEnter, onMouseLeave]
+        [isHover, onMouseEnter, onMouseLeave],
     );
 };
 

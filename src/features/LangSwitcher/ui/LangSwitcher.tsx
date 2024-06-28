@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 interface LangSwitcherProps {
     className?: string;
-    short?:boolean;
+    short?: boolean;
 }
 const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();

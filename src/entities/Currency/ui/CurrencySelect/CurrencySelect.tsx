@@ -4,24 +4,32 @@ import { ListBox } from '@/shared/ui/Popups';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
-  className?: string;
-  value?:Currency;
-  onChange?:(value:Currency)=>void;
-  readonly?:boolean
+    className?: string;
+    value?: Currency;
+    onChange?: (value: Currency) => void;
+    readonly?: boolean;
 }
 
 const options = [
     { value: Currency.RUB, content: Currency.RUB },
     { value: Currency.EUR, content: Currency.EUR },
-    { value: Currency.USD, content: Currency.USD }
+    { value: Currency.USD, content: Currency.USD },
 ];
 
-function CurrencySelect({ className, value, onChange, readonly }: CurrencySelectProps) {
+function CurrencySelect({
+    className,
+    value,
+    onChange,
+    readonly,
+}: CurrencySelectProps) {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value:string) => {
-        onChange?.(value as Currency);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Currency);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox

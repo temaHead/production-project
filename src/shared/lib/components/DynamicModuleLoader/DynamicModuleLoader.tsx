@@ -1,22 +1,24 @@
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
+import {
+    ReduxStoreWithManager,
+    StateSchema,
+    StateSchemaKey,
+} from '@/app/providers/StoreProvider';
 
-export type ReducersList={
-    [name in StateSchemaKey]?:Reducer<NonNullable<StateSchema[name]>>;
-}
+export type ReducersList = {
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
+};
 
 interface DynamicModuleLoaderProps {
-    children:ReactNode;
-    removeAfterUnmount?:boolean;
-    reducers:ReducersList;
+    children: ReactNode;
+    removeAfterUnmount?: boolean;
+    reducers: ReducersList;
 }
 
-export function DynamicModuleLoader(props:DynamicModuleLoaderProps) {
-    const {
-        children, reducers, removeAfterUnmount = true,
-    } = props;
+export function DynamicModuleLoader(props: DynamicModuleLoaderProps) {
+    const { children, reducers, removeAfterUnmount = true } = props;
     const store = useStore() as ReduxStoreWithManager;
     const dispatch = useDispatch();
 
@@ -40,13 +42,11 @@ export function DynamicModuleLoader(props:DynamicModuleLoaderProps) {
                 });
             }
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         // eslint-disable-next-line react/jsx-no-useless-fragment
-        <>
-            { children }
-        </>
+        <>{children}</>
     );
 }

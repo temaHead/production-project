@@ -38,13 +38,15 @@ export default {
         };
 
         // @ts-ignore
-        config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
-            if (/svg/.test(rule.test as string)) {
-                return { ...rule, exclude: /\.svg$/i };
-            }
+        config!.module!.rules = config!.module!.rules!.map(
+            (rule: RuleSetRule) => {
+                if (/svg/.test(rule.test as string)) {
+                    return { ...rule, exclude: /\.svg$/i };
+                }
 
-            return rule;
-        });
+                return rule;
+            },
+        );
 
         config!.module!.rules.push({
             test: /\.svg$/,
@@ -57,7 +59,7 @@ export default {
                 __IS_DEV__: JSON.stringify(true),
                 __API__: JSON.stringify('https://testapi.ru'),
                 __PROJECT__: JSON.stringify('storybook'),
-            })
+            }),
         );
         // Return the altered config
         return config;

@@ -15,11 +15,15 @@ function Counter() {
     };
     return (
         <div>
-            <h1 data-testid="value-title">
-                {counterValue}
-            </h1>
-            <Button onClick={increment} data-testid="increment-btn"> inc</Button>
-            <Button onClick={decrement} data-testid="decrement-btn"> dec</Button>
+            <h1 data-testid="value-title">{counterValue}</h1>
+            <Button onClick={increment} data-testid="increment-btn">
+                {' '}
+                inc
+            </Button>
+            <Button onClick={decrement} data-testid="decrement-btn">
+                {' '}
+                dec
+            </Button>
         </div>
     );
 }

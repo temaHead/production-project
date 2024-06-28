@@ -11,10 +11,10 @@ import { Theme } from '@/shared/const/theme';
 // eslint-disable-next-line artem/layer-imports
 import '@/app/styles/index.scss';
 
-export interface ComponentRenderOptions{
-    route?:string
-    initialState?:DeepPartial<StateSchema>
-    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+export interface ComponentRenderOptions {
+    route?: string;
+    initialState?: DeepPartial<StateSchema>;
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
     theme?: Theme;
 }
 
@@ -34,12 +34,15 @@ export function TestProvider(props: TestProviderProps) {
 
     return (
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
+            {' '}
+            <StoreProvider
+                asyncReducers={asyncReducers}
+                initialState={initialState}
+            >
                 <I18nextProvider i18n={i18nForTests}>
                     <ThemeProvider initialTheme={theme}>
-                        <div className={`app ${theme}`}>
-                            {children}
-                        </div>
+                        {' '}
+                        <div className={`app ${theme}`}>{children}</div>
                     </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
@@ -47,7 +50,10 @@ export function TestProvider(props: TestProviderProps) {
     );
 }
 
-export function ComponentRender(component:ReactNode, options:ComponentRenderOptions = {}) {
+export function ComponentRender(
+    component: ReactNode,
+    options: ComponentRenderOptions = {},
+) {
     const { route = '/', initialState, asyncReducers } = options;
     return render(<TestProvider options={options}>{component}</TestProvider>);
 }
